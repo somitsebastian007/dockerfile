@@ -1,9 +1,9 @@
-FROM ubuntu:16.04
+FROM ubuntu
 
-RUN apt-get update && apt-get install -y python3 python3-pip
+RUN apt-get update 
 
-RUN pip3 install flask
+RUN && apt-get install nginx -y
 
-COPY app.py /opt/
+COPY index.html /var/www/html
 
-ENTRYPOINT FLASK_APP=/opt/app.py flask run --host=0.0.0.0 --port=8080
+CMD ["nginx","-g","daemon off"]
