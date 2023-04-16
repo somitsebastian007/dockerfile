@@ -2,7 +2,7 @@ From ubuntu
 
 RUN apt-get -y update && apt-get -y install python3
 
-RUN pip install flask
+RUN pi3p install flask flask-mysql
 
 COPY app.py /opt/source-code
 
